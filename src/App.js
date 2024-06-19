@@ -1,11 +1,7 @@
-// import MovieCard from "./Moviecard";
 import React from "react";
 import MovieList from "./Movielist";
 import NavBar from "./Navbar";
 import { movies } from "./MovieData";
-// import Student from "./Student";
-// import Head1 from "./Block1";
-// import Head2 from "./Block2";
 
 class App extends React.Component{
 
@@ -87,27 +83,12 @@ class App extends React.Component{
 
     return (
       <>
-        {/* Props */}
-        {/* <Student name="Kushal" marks={80}/>
-        <Student name="Moksha" marks={75}/>
-        <Student marks={70}/>
-        <Student name="Sudha"/> */}
-  
         <NavBar cartCount={cartCount}/>
         <MovieList movies={movies} add={this.handleIncStars} sub={this.handleRedStars}
         toggleFav={this.handleFav} toggleCart={this.handleCart}/>
-  
-        {/* CSS modules */}
-        {/* <Head1/>
-        <Head2/> */}
       </>
     );
   }
 }
-
-// Student.defaultProps={
-//   name: "Student",
-//   marks: 40
-// }
 
 export default App;
