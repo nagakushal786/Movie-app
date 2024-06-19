@@ -1,0 +1,66 @@
+State:
+Built in object
+Any information regarding component will be stored
+
+Use an arrow function to automatically bind the function to the class.
+
+setState() - update the state and rerender the component.
+
+setState() is asynchronous in nature.
+
+Batching:
+When we do multiple calls to the setState(), react batch them all
+into a single call and the final call will be considered.
+Rerendering in both the forms will be happening only once.
+
+setState form 1
+    this.setState({
+      stars: this.state.stars+0.5
+    });
+
+    setState form 2
+    if(this.state.stars>=5){
+      return;
+    }
+    this.setState((prevState)=>{
+      return {
+        stars: prevState.stars+0.5
+      }
+    }, ()=>{
+      console.log("stars inside callback: "+this.state.stars);
+    });
+    console.log("stars outside callback: "+this.state.stars);
+
+    if(this.state.stars>=5){
+      return;
+    }
+    this.setState((prevState)=>{
+      return {
+        stars: prevState.stars+0.5
+      }
+    });
+    this.setState((prevState)=>{
+      return {
+        stars: prevState.stars+0.5
+      }
+    });
+
+Props:
+Like arguments for function.
+
+Only parent can pass the props to the child.
+
+Styling in React:
+1. CSS stylesheet
+2. Inline Styling
+3. Styled components
+4. CSS modules
+
+Styled components - CSS in Javascript
+
+.css - global scope
+styled components - local scope
+
+Since .css file has global scope, when we create a unique styling for 
+one component, it will be applied to all the components. So, to avoid this
+we use CSS modules.
